@@ -3,7 +3,6 @@ body {
 	}
 
 	h1 {
-	    
 	}
 
 	.aBox{
@@ -13,10 +12,15 @@ body {
 
 	#navBox{
 		margin-top: 25px;
-		height:425px; 
+		height:500px; 
 		background-color:#fff; 
 		border:1px solid #e5e5e5; 
 		border-radius:25px;
+	}
+
+	#ticTacLogo{
+		width:50%;
+		height:100px;
 	}
 
 	.col-xs-3{

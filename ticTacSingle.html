@@ -8,7 +8,7 @@
   <meta name="description" content="Tic Tac Toe Game">
   <meta name="Brandon Nelson">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="sweetalert-master/dist/sweetalert.min.js"></script>
   
   <link rel="stylesheet" type="text/css" href="sweetalert-master/dist/sweetalert.css">
@@ -21,9 +21,17 @@
 </head>
 <body>
 	<div class="row">
-		<a href="ticTacHome.html" style="margin:20px; float:right;" class="btn btn-default" role="button">HOME</a>
-		<h1 class="text-center" style="padding:10px"> <img src="tictac.img" alt="tic tac toe image" height="100" width="40%"> </h1>
-			<div class="row col-xs-10 col-md-offset-2" style="height:200px">
+		<div class="row col-xs-4" style="height:150px;">
+			<a href="index.html" style="margin:20px 5px 0 20px; float:left;" class="btn btn-default btn-sm" role="button"><span class="glyphicon glyphicon-home" aria-hidden="true"> HOME</a>
+			<a href="ticTacEasy.html" style="margin:20px 5px 0 0; float:left;" class="btn btn-default btn-sm" role="button">Easy</a>
+			<a href="ticTacMedium.html" style="margin:20px 5px 0 0; float:left;" class="btn btn-default btn-sm" role="button">Medium</a>
+			<a href="ticTacHard.html" style="margin:20px 5px 0 0; float:left;" class="btn btn-default btn-sm" role="button">Hard</a>
+			<a href="ticTacSingle.html" style="margin:20px 5px 0 0; float:left;" class="btn btn-default btn-sm active" role="button">2 Player</a>
+		</div>
+		<div class="row col-xs-8" style="height:150px;">
+			<h1  style="padding:10px"> <img src="tictac.img" id="ticTacLogo" alt="tic tac toe image"> </h1>
+		</div>
+			<div class="row col-xs-10 col-md-offset-2" style="height:200px;">
 				<a href="#" id="zero" class="col-xs-3 aBox" style="border: 2px solid black; height:100%"><div id="showZero" class="box text-center" style="height:100%"></div></a>
 				<a href="#" id="one" class="col-xs-3 aBox" style="border: 2px solid black; height:100%"><div id="showOne" class="box text-center" style="height:100%"></div></a>
 				<a href="#" id="two" class="col-xs-3 aBox" style="border: 2px solid black; height:100%;"><div id="showTwo" class="box text-center" style="height:100%"></div></a>

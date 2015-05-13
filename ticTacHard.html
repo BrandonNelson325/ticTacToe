@@ -8,7 +8,7 @@
   <meta name="description" content="Tic Tac Toe Game">
   <meta name="Brandon Nelson">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="sweetalert-master/dist/sweetalert.min.js"></script>
 
   <link rel="stylesheet" type="text/css" href="sweetalert-master/dist/sweetalert.css">
@@ -21,9 +21,17 @@
 </head>
 <body>
 	<div class="row">
-		<a href="ticTacHome.html" style="margin:20px; float:right;" class="btn btn-default" role="button">HOME</a>
-		<h1 class="text-center" style="padding:10px"> <img src="tictac.img" alt="tic tac toe image" height="100" width="40%"> </h1>
-			<div class="row col-xs-10 col-md-offset-2" style="height:200px">
+		<div class="row col-xs-4" style="height:150px;">
+			<a href="index.html" style="margin:20px 5px 0 20px; float:left;" class="btn btn-default btn-sm" role="button"><span class="glyphicon glyphicon-home" aria-hidden="true"> HOME</a>
+			<a href="ticTacEasy.html" style="margin:20px 5px 0 0; float:left;" class="btn btn-default btn-sm" role="button">Easy</a>
+			<a href="ticTacMedium.html" style="margin:20px 5px 0 0; float:left;" class="btn btn-default btn-sm" role="button">Medium</a>
+			<a href="ticTacHard.html" style="margin:20px 5px 0 0; float:left;" class="btn btn-default btn-sm active" role="button">Hard</a>
+			<a href="ticTacSingle.html" style="margin:20px 5px 0 0; float:left;" class="btn btn-default btn-sm" role="button">2 Player</a>
+		</div>
+		<div class="row col-xs-8" style="height:150px;">
+			<h1  style="padding:10px"> <img src="tictac.img" id="ticTacLogo" alt="tic tac toe image"> </h1>
+		</div>
+			<div class="row col-xs-10 col-md-offset-2" style="height:200px;">
 				<a href="#" id="zero" class="col-xs-3 aBox" style="border: 2px solid black; height:100%"><div id="showZero" class="box text-center" style="height:100%"></div></a>
 				<a href="#" id="one" class="col-xs-3 aBox" style="border: 2px solid black; height:100%"><div id="showOne" class="box text-center" style="height:100%"></div></a>
 				<a href="#" id="two" class="col-xs-3 aBox" style="border: 2px solid black; height:100%;"><div id="showTwo" class="box text-center" style="height:100%"></div></a>
@@ -316,7 +324,199 @@ function hardCheck(){
 
 	  		boxes[0] = "X";
 
-	  		if(boxes[0] == "X" && boxes[1] == "X" && boxes[2] == ""){
+	  		if(boxes[0] == "O" && boxes[1] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[0] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[2] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[0] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[3] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[0] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[6] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[0] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[4] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[0] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[8] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[0] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[2] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[1] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[7] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[1] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[4] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[1] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[5] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[2] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[4] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[2] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[8] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[2] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[6] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[2] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[6] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[3] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[4] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[3] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[5] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[3] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[6] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[4] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[7] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[4] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[8] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[4] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[5] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[4] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[8] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[5] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[7] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[6] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[8] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[6] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[8] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[7] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[0] == "X" && boxes[1] == "X" && boxes[2] == ""){
 	  			$("#showTwo").show().empty().html(o);
 	  			boxes[2] = "O";
 	  		}
@@ -551,7 +751,199 @@ function hardCheck(){
 
 			console.log(boxes);
 
-	  		if(boxes[0] == "X" && boxes[1] == "X" && boxes[2] == ""){
+	  		if(boxes[0] == "O" && boxes[1] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[0] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[2] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[0] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[3] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[0] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[6] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[0] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[4] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[0] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[8] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[0] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[2] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[1] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[7] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[1] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[4] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[1] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[5] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[2] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[4] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[2] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[8] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[2] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[6] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[2] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[6] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[3] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[4] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[3] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[5] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[3] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[6] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[4] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[7] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[4] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[8] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[4] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[5] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[4] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[8] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[5] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[7] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[6] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[8] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[6] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[8] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[7] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[0] == "X" && boxes[1] == "X" && boxes[2] == ""){
 	  			$("#showTwo").show().empty().html(o);
 	  			boxes[2] = "O";
 	  		}
@@ -784,7 +1176,199 @@ function hardCheck(){
 
 			console.log(boxes);
 
-	  		if(boxes[0] == "X" && boxes[1] == "X" && boxes[2] == ""){
+	  		if(boxes[0] == "O" && boxes[1] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[0] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[2] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[0] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[3] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[0] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[6] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[0] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[4] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[0] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[8] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[0] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[2] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[1] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[7] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[1] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[4] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[1] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[5] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[2] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[4] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[2] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[8] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[2] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[6] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[2] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[6] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[3] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[4] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[3] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[5] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[3] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[6] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[4] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[7] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[4] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[8] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[4] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[5] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[4] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[8] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[5] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[7] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[6] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[8] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[6] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[8] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[7] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[0] == "X" && boxes[1] == "X" && boxes[2] == ""){
 	  			$("#showTwo").show().empty().html(o);
 	  			boxes[2] = "O";
 	  		}
@@ -1017,7 +1601,199 @@ function hardCheck(){
 
 			console.log(boxes);
 
-	  		if(boxes[0] == "X" && boxes[1] == "X" && boxes[2] == ""){
+	  		if(boxes[0] == "O" && boxes[1] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[0] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[2] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[0] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[3] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[0] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[6] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[0] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[4] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[0] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[8] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[0] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[2] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[1] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[7] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[1] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[4] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[1] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[5] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[2] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[4] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[2] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[8] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[2] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[6] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[2] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[6] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[3] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[4] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[3] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[5] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[3] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[6] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[4] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[7] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[4] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[8] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[4] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[5] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[4] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[8] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[5] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[7] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[6] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[8] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[6] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[8] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[7] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[0] == "X" && boxes[1] == "X" && boxes[2] == ""){
 	  			$("#showTwo").show().empty().html(o);
 	  			boxes[2] = "O";
 	  		}
@@ -1250,7 +2026,199 @@ function hardCheck(){
 
 			console.log(boxes);
 
-			if(boxes[0] == "X" && boxes[1] == "X" && boxes[2] == ""){
+			if(boxes[0] == "O" && boxes[1] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[0] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[2] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[0] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[3] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[0] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[6] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[0] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[4] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[0] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[8] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[0] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[2] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[1] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[7] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[1] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[4] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[1] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[5] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[2] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[4] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[2] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[8] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[2] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[6] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[2] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[6] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[3] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[4] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[3] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[5] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[3] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[6] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[4] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[7] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[4] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[8] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[4] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[5] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[4] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[8] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[5] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[7] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[6] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[8] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[6] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[8] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[7] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[0] == "X" && boxes[1] == "X" && boxes[2] == ""){
 	  			$("#showTwo").show().empty().html(o);
 	  			boxes[2] = "O";
 	  		}
@@ -1483,7 +2451,199 @@ function hardCheck(){
 
 			console.log(boxes);
 
-	  		if(boxes[0] == "X" && boxes[1] == "X" && boxes[2] == ""){
+	  		if(boxes[0] == "O" && boxes[1] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[0] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[2] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[0] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[3] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[0] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[6] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[0] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[4] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[0] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[8] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[0] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[2] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[1] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[7] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[1] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[4] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[1] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[5] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[2] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[4] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[2] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[8] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[2] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[6] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[2] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[6] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[3] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[4] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[3] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[5] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[3] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[6] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[4] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[7] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[4] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[8] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[4] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[5] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[4] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[8] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[5] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[7] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[6] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[8] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[6] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[8] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[7] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[0] == "X" && boxes[1] == "X" && boxes[2] == ""){
 	  			$("#showTwo").show().empty().html(o);
 	  			boxes[2] = "O";
 	  		}
@@ -1716,7 +2876,199 @@ function hardCheck(){
 
 			console.log(boxes);
 
-	  		if(boxes[0] == "X" && boxes[1] == "X" && boxes[2] == ""){
+	  		if(boxes[0] == "O" && boxes[1] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[0] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[2] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[0] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[3] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[0] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[6] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[0] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[4] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[0] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[8] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[0] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[2] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[1] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[7] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[1] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[4] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[1] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[5] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[2] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[4] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[2] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[8] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[2] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[6] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[2] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[6] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[3] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[4] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[3] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[5] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[3] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[6] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[4] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[7] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[4] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[8] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[4] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[5] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[4] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[8] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[5] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[7] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[6] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[8] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[6] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[8] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[7] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[0] == "X" && boxes[1] == "X" && boxes[2] == ""){
 	  			$("#showTwo").show().empty().html(o);
 	  			boxes[2] = "O";
 	  		}
@@ -1907,6 +3259,10 @@ function hardCheck(){
 	  		else if(boxes[8] == "X" && boxes[7] == "X" && boxes[6] == ""){
 	  			$("#showSix").show().empty().html(o);
 	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[8] == "X" && boxes[7] == "X" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
 	  		}else if(boxes[4] == ""){
 	  			$("#showFour").show().empty().html(o);
 	  			boxes[4] = "O";
@@ -1948,7 +3304,199 @@ function hardCheck(){
 
 			console.log(boxes);
 
-	  		if(boxes[0] == "X" && boxes[1] == "X" && boxes[2] == ""){
+	  		if(boxes[0] == "O" && boxes[1] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[0] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[2] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[0] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[3] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[0] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[6] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[0] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[4] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[0] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[8] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[0] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[2] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[1] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[7] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[1] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[4] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[1] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[5] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[2] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[4] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[2] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[8] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[2] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[6] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[2] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[6] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[3] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[4] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[3] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[5] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[3] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[6] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[4] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[7] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[4] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[8] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[4] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[5] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[4] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[8] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[5] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[7] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[6] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[8] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[6] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[8] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[7] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[0] == "X" && boxes[1] == "X" && boxes[2] == ""){
 	  			$("#showTwo").show().empty().html(o);
 	  			boxes[2] = "O";
 	  		}
@@ -2181,7 +3729,199 @@ function hardCheck(){
 
 			console.log(boxes);
 
-	  		if(boxes[0] == "X" && boxes[1] == "X" && boxes[2] == ""){
+	  		if(boxes[0] == "O" && boxes[1] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[0] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[2] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[0] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[3] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[0] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[6] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[0] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[4] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[0] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[0] == "O" && boxes[8] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[0] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[2] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[1] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[7] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[1] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[1] == "O" && boxes[4] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[1] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[5] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[2] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[4] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[2] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[8] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[2] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[2] == "O" && boxes[6] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[2] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[6] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[3] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[4] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[3] == "O" && boxes[5] == ""){
+	  			$("#showFive").show().empty().html(o);
+	  			boxes[5] = "O";
+	  		}
+	  		else if(boxes[3] == "O" && boxes[5] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[3] == "O" && boxes[4] == ""){
+	  			$("#showFour").show().empty().html(o);
+	  			boxes[4] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[6] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[4] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[7] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[4] == "O" && boxes[1] == ""){
+	  			$("#showOne").show().empty().html(o);
+	  			boxes[1] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[8] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[4] == "O" && boxes[0] == ""){
+	  			$("#showZero").show().empty().html(o);
+	  			boxes[0] = "O";
+	  		}
+	  		else if(boxes[4] == "O" && boxes[5] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[4] == "O" && boxes[3] == ""){
+	  			$("#showThree").show().empty().html(o);
+	  			boxes[3] = "O";
+	  		}
+	  		else if(boxes[5] == "O" && boxes[8] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[5] == "O" && boxes[2] == ""){
+	  			$("#showTwo").show().empty().html(o);
+	  			boxes[2] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[7] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[6] == "O" && boxes[8] == ""){
+	  			$("#showEight").show().empty().html(o);
+	  			boxes[8] = "O";
+	  		}
+	  		else if(boxes[6] == "O" && boxes[8] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[6] == "O" && boxes[7] == ""){
+	  			$("#showSeven").show().empty().html(o);
+	  			boxes[7] = "O";
+	  		}
+	  		else if(boxes[7] == "O" && boxes[8] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[8] == "O" && boxes[7] == "O" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[0] == "X" && boxes[1] == "X" && boxes[2] == ""){
 	  			$("#showTwo").show().empty().html(o);
 	  			boxes[2] = "O";
 	  		}
@@ -2366,6 +4106,10 @@ function hardCheck(){
 	  			boxes[7] = "O";
 	  		}
 	  		else if(boxes[7] == "X" && boxes[8] == "X" && boxes[6] == ""){
+	  			$("#showSix").show().empty().html(o);
+	  			boxes[6] = "O";
+	  		}
+	  		else if(boxes[8] == "X" && boxes[7] == "X" && boxes[6] == ""){
 	  			$("#showSix").show().empty().html(o);
 	  			boxes[6] = "O";
 	  		}
